@@ -1,0 +1,144 @@
+*[draggable="true"]{
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  /* Required to make elements draggable in old WebKit */
+  -khtml-user-drag: element;
+  -webkit-user-drag: element;
+  cursor: pointer;
+}
+
+.hide{ display:none; }
+.show{ display:block; }
+
+.card-boxes{
+  width:500px; margin:2em auto;
+  text-align:center;
+}
+
+.box{
+  display:inline-block;
+  width:100px; height:100px; line-height:100px;
+  text-decoration:none; color:#fff; font-weight:bold;
+  font-family:sans-serif; font-size:1.25em;
+  background:#5CB9E2;
+  margin:4px;
+  opacity:1;
+  -webkit-transform:scale(1);
+  transform:scale(1);
+  -webkit-transition:opacity .25s ease-out, -webkit-transform .25s ease-out;
+  transition:opacity .25s ease-out, transform .25s ease-out;
+  border-radius:5px;
+}
+
+.box:hover{
+  background:#2C9BCB;
+  -webkit-transition:background .25s ease-out;
+  transition:background .25s ease-out;
+}
+
+.box.is-dragged{
+  opacity:.5;
+  -webkit-transform:scale(.8);
+  transform:scale(.8);
+  -webkit-transition:opacity .25s ease-out, -webkit-transform .15s ease-out;
+  transition:opacity .25s ease-out, transform .15s ease-out;
+}
+
+.box-single{
+  display:inline-block;
+  width:100px; height:100px; line-height:100px;
+  text-decoration:none; color:#fff; font-weight:bold;
+  font-family:sans-serif; font-size:1.25em;
+  background:#5CB9E2;
+  margin:4px;
+  opacity:1;
+  border-radius:5px;
+}
+
+.dropzone{
+  background:#999;
+  display:inline-block;
+  width:100px; height:100px; line-height:100px;
+  margin:4px;
+  text-align:center;
+  color:#fff;
+  font-family:sans-serif; font-size:1.25em;
+  text-decoration:none;
+  border-radius:5px;
+  -webkit-transition:background .25s ease-in;
+  transition:background .25s ease-in;
+}
+
+.dropzone.dropover{  
+  background:#54c817;
+  -webkit-transition:background .25s ease-in;
+  transition:background .25s ease-in;
+}
+
+#scrambleLink{
+  display:inline-block;
+  width:40%; height:50px; line-height:50px;
+  text-align:center; text-decoration:none;
+  font-family:sans-serif; font-size:1.25em;
+  border-radius:5px;
+  background:#5CB9E2; color:#fff;
+}
+
+/* Pop-up */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 800ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 50%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: red;
+}
+.popup .content {
+  max-height: 50%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 700px){
+  .popup{
+    width: 80%;
+  }
+}
